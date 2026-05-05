@@ -23,9 +23,9 @@ import (
 
 func main() {
 	// 設定 Hugo 專案目錄的路徑
-	hugoProjectPath := "/Users/adi/repo/kokp520.github.io"
+	hugoProjectPath := "/Users/adiwu/repo/kokp520.github.io"
 
-	hugoPath := "/Users/adi/repo/adisite/"
+	hugoPath := "/Users/adiwu/flutterApp/adisite/"
 
 	// ----- website content -----
 
