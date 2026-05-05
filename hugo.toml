@@ -53,7 +53,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Author config
 # 作者配置
-[author]
+[site.author]
   name = "Adi"
   email = "kokp520@gmail.com"
   link = "https://kokp520.github.io"
@@ -439,7 +439,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     [params.page.mapbox]
       # access token of Mapbox GL JS
       # Mapbox GL JS 的 access token
-      accessToken = "pk.eyJ1IjoiZGlsbG9uenEiLCJhIjoiY2s2czd2M2x3MDA0NjNmcGxmcjVrZmc2cyJ9.aSjv2BNuZUfARvxRYjSVZQ"
+      accessToken = ""
       # style for the light theme
       # 淺色主題的地圖樣式
       lightStyle = "mapbox://styles/mapbox/light-v10?optimize=true"
