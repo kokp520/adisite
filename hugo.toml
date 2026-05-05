@@ -53,10 +53,6 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Author config
 # 作者配置
-[site.author]
-  name = "Adi"
-  email = "kokp520@gmail.com"
-  link = "https://kokp520.github.io"
 
 # Menu config
 # 菜單配置
@@ -753,8 +749,8 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 # Permalinks config (https://gohugo.io/content-management/urls/#permalinks)
 # Permalinks 配置 (https://gohugo.io/content-management/urls/#permalinks)
 [Permalinks]
-  # posts = ":year/:month/:filename"
-  posts = ":filename"
+  # posts = ":year/:month/:contentbasename"
+  posts = ":contentbasename"
 
 # Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
 # 隱私信息配置 (https://gohugo.io/about/hugo-and-gdpr/)
@@ -764,7 +760,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [privacy.googleAnalytics]
     # ...
   [privacy.twitter]
-    enableDNT = true
+     
   [privacy.youtube]
     privacyEnhanced = true
 
@@ -996,3 +992,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 #         Email = "xxxx@xxxx.com"
 #         Phone = "555-555-555"
 #         RSS = true
+[params.author]
+  name = "Adi"
+  email = "kokp520@gmail.com"
+  link = "https://kokp520.github.io"

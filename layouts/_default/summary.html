@@ -24,8 +24,8 @@
 
     {{- /* Meta */ -}}
     <div class="post-meta">
-        {{- $author := $params.author | default site.author.name | default (T "author") -}}
-        {{- $authorLink := $params.authorlink | default site.author.link | default .Site.Home.RelPermalink -}}
+        {{- $author := $params.author | default site.Params.author.name | default (T "author") -}}
+        {{- $authorLink := $params.authorlink | default site.Params.author.link | default .Site.Home.RelPermalink -}}
         <span class="post-author">
             {{- $options := dict "Class" "author" "Destination" $authorLink "Title" "Author" "Rel" "author" "Icon" (dict "Class" "fas fa-user-circle fa-fw") "Content" $author -}}
             {{- partial "plugin/a.html" $options -}}
