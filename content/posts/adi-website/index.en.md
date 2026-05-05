@@ -23,7 +23,6 @@ fraction: true
 fontawesome: true
 linkToMarkdown: true
 rssFullText: false
-categories: ["Documents"]
 
 toc:
   enable: true
