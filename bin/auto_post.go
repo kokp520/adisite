@@ -63,7 +63,21 @@ func main() {
 	// 3. 儲存檔案
 	now := time.Now()
 	timestamp := now.Format("20060102-150405")
-	fileName := fmt.Sprintf("content/posts/ai-gen-%s.md", timestamp)
+	slug := fmt.Sprintf("ai-gen-%s", timestamp)
+	dirPath := fmt.Sprintf("content/posts/%s", slug)
+	
+	err = os.MkdirAll(dirPath, 0755)
+	if err != nil {
+		fmt.Printf("建立目錄失敗: %v\n", err)
+		return
+	}
+
+	fileName := fmt.Sprintf("%s/index.md", dirPath)
+	
+	// 確保內容以 --- 開始
+	if !strings.HasPrefix(content, "---") {
+		content = "---\n" + content
+	}
 	
 	err = os.WriteFile(fileName, []byte(content), 0644)
 	if err != nil {
