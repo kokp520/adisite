@@ -40,14 +40,23 @@ func main() {
 	}
 
 	content := stdout.String()
-	// 清理可能的 markdown 標記 (有些 AI 還是會習慣加上去)
+	
+	// --- 新增：強效清理邏輯 ---
+	// 1. 尋找第一個 "---"，過濾掉前面所有的系統警告訊息 (如 MCP issues)
+	startIdx := strings.Index(content, "---")
+	if startIdx != -1 {
+		content = content[startIdx:]
+	}
+
+	// 2. 清理可能的 markdown 區塊標記
 	content = strings.TrimPrefix(content, "```markdown")
 	content = strings.TrimPrefix(content, "```")
 	content = strings.TrimSuffix(content, "```")
 	content = strings.TrimSpace(content)
+	// ------------------------
 
-	if content == "" {
-		fmt.Println("錯誤：AI 產出的內容為空。")
+	if content == "" || !strings.HasPrefix(content, "---") {
+		fmt.Println("錯誤：AI 產出的格式不正確或內容為空。")
 		return
 	}
 
