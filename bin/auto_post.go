@@ -13,29 +13,17 @@ func main() {
 	fmt.Println("正在啟動 AI 技術文章生成流程...")
 
 	// 1. 定義 Prompt
-	prompt := `你現在是一位資深 AI/ML 技術部落客。請隨機挑選一個前沿的 AI 或機器學習技術主題（例如：LLM 代理、擴散模型優化、RAG 新進展、機器學習工程化等），寫一篇具備深度的教學或分享文章。
-文章語言請以繁體中文為主，偶爾夾雜專業英文術語。內容要豐富、專業且有創意。
-請嚴格輸出 Hugo Markdown 格式的內容，包含完整的 Frontmatter。
-Frontmatter 格式參考：
----
-title: "文章標題"
-subtitle: "副標題"
-date: 2026-05-05T00:00:00+08:00
-lastmod: 2026-05-05T00:00:00+08:00
-draft: false
-author: "AI Assistant"
-tags: ["AI", "Machine Learning"]
-categories: ["Tech"]
-toc:
-  enable: true
----
-<!--more-->
-[文章正文]
+	prompt := `你現在是一位資深 AI/ML 技術專家。請使用已安裝的 'ai-tech-blogger' skill 寫作規範，隨機挑選一個前沿且具備實作價值的 AI/ML 主題（例如：LLM 代理、Agentic RAG、擴散模型底層優化、高效能 ML 工程實踐等）。
 
-重要規則：
-1. 只輸出 Markdown 原始碼。
-2. 不要包含 markdown 區塊標記（如 ` + "```" + `markdown）。
-3. 文章日期請設定為今日。`
+要求：
+1. 嚴格遵守 'ai-tech-blogger' skill 的所有寫作指導方針。
+2. 全文必須超過 1500 字，內容要詳實且具備專業深度。
+3. 標題要極具吸引力，展現專家洞察力。
+4. 內容必須包含具體的實作做法、方向、範例程式碼或架構圖 (Mermaid)。
+5. 參考現有 posts 的格式豐富度。
+6. 文章日期設定為今日。
+7. Weight 必須設定為 2。
+8. 只輸出 Markdown 原始碼，不含任何包圍的 code block 標記。`
 
 	// 2. 呼叫 Gemini CLI
 	fmt.Println("正在請求 AI 生成內容 (這可能需要幾十秒)...")

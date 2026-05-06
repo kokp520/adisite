@@ -21,7 +21,7 @@
     {{- else if eq .Params.comment false -}}
         {{- .Scratch.Set "comment" dict -}}
     {{- end -}}
-{{- else if eq .Site .Sites.First -}}
+{{- else if eq .Site (index hugo.Sites 0) -}}
     {{- warnf "\n\nCurrent environment is \"development\". The \"comment system\", \"CDN\" and \"fingerprint\" will be disabled.\n YOUR IN \"development\". \"comment system\", \"CDN\" 和 \"fingerprint\" NOT BEING USE.\n" -}}
 {{- end -}}
 
